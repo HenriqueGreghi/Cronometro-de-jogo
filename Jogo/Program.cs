@@ -6,18 +6,22 @@ namespace Jogo
     {
         static void Main(string[] args)
         {
-            Calculo h = new Calculo();
+            Calculo calculadorHoraMinuto = new Calculo();
 
 
             Console.WriteLine("Entre com hora inicio: ");
-            h.HoraInicio = int.Parse(Console.ReadLine());
+            calculadorHoraMinuto.HoraInicio = int.Parse(Console.ReadLine());
             Console.WriteLine("Entre com minuto inicio: ");
-            h.MinutoInicio = int.Parse(Console.ReadLine());
+            calculadorHoraMinuto.MinutoInicio = int.Parse(Console.ReadLine());
             Console.WriteLine("Entre com hora final: ");
-            h.HoraFim = int.Parse(Console.ReadLine());
+            calculadorHoraMinuto.HoraFim = int.Parse(Console.ReadLine());
             Console.WriteLine("Entre com minuto final: ");
-            h.MinutoFim = int.Parse(Console.ReadLine());
-            Console.WriteLine(h);
+            calculadorHoraMinuto.MinutoFim = int.Parse(Console.ReadLine());
+
+
+
+            
+            Console.WriteLine(calculadorHoraMinuto.Imprimir());
         }
     }
 }

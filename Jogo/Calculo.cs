@@ -18,29 +18,35 @@ namespace Jogo
 
         public int HoraJogo()
         {
-            Hora = (HoraFim * 60) - (HoraInicio * 60) + (MinutoFim - MinutoInicio);
+            Hora = (HoraFim * 60 + MinutoFim) - (HoraInicio * 60 + MinutoInicio);
             TotalHora = Hora / 60;
 
             return TotalHora;
+
+           
         }
         public int MinutoJogo()
         {
-            TotalMinuto = TotalHora % 60;
+            TotalMinuto = Hora % 60;
+
             return TotalMinuto;
         }
-        public override string ToString()
+        public string Imprimir()
         {
-            
-            if (HoraJogo() == 0 && MinutoJogo() == 0)
+
+            if (HoraJogo() > 0 || MinutoJogo()> 0 )
             {
+                return ("O jogo durou " + HoraJogo() + " Hora(s) E " + MinutoJogo() + " Minuto(s) ");
+            }
+            else if(HoraJogo()<= 0 && MinutoJogo() <= 0)
+            {
+
                 return "O jogo durou 24 Horas e 0 Minutos";
             }
             else
             {
-                
-                return ("O jogo durou " + HoraJogo() + " Hora(s) E " + MinutoJogo() +  " Minuto(s) ") ;
+                return "nada";
             }
-           
         }
     }
 
